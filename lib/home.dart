@@ -80,38 +80,44 @@ class _HomeState extends State<Home> {
                   currentIndex: 1,
                 ),
                 catagory(
-                  title: "My Playlist",
+                  title: "My Playlists",
                   currentIndex: 2,
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20.0),
-          Container(
-            height: 250,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ListView.separated(
-              separatorBuilder: (context, index) => const SizedBox(width: 20),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => trendingALbums(albums[index]),
-              itemCount: albums.length,
-            ),
-          ),
+          selectedIndex == 0
+              ? Container(
+                  height: 250,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 20),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) =>
+                        trendingALbums(albums[index]),
+                    itemCount: albums.length,
+                  ),
+                )
+              : const SizedBox(),
           const SizedBox(height: 20.0),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                Text("Recently Played",
-                    style: TextStyle(
-                      color: Color(0xff71cae3),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    )),
-              ],
-            ),
-          ),
+          selectedIndex == 0
+              ? const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Text("Recently Played",
+                          style: TextStyle(
+                            color: Color(0xff71cae3),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                          )),
+                    ],
+                  ),
+                )
+              : const SizedBox(),
           Expanded(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -119,9 +125,19 @@ class _HomeState extends State<Home> {
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 20),
                 scrollDirection: Axis.vertical,
-                itemBuilder: (context, index) =>
-                    recentlyplayed(width, recentlyPlayed[index]),
-                itemCount: recentlyPlayed.length,
+                itemBuilder: (context, index) => recentlyplayed(
+                  width,
+                  selectedIndex == 0
+                      ? recentlyPlayed[index]
+                      : selectedIndex == 1
+                          ? favourites[index]
+                          : playlists[index],
+                ),
+                itemCount: selectedIndex == 0
+                    ? recentlyPlayed.length
+                    : selectedIndex == 1
+                        ? favourites.length
+                        : playlists.length,
               ),
             ),
           ),

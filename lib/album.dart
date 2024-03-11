@@ -59,6 +59,58 @@ List<Album> recentlyPlayed = [
     artist: "Ed Sheeran",
   ),
 ];
+List<Album> favourites = [
+  Album(
+    title: "Arjan Vailly",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273aeb151f6774b6edf52195631",
+    artist: "Manan Bhardwaj",
+  ),
+  Album(
+    title: "Satranga",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273021d7017f73387b008eab271",
+    artist: "Arijit Singh",
+  ),
+  Album(
+    title: "Khalasi",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273a6f83b62be5e3dea563f6d79",
+    artist: "Aditya Gadhvi",
+  ),
+  Album(
+    title: "Shape of You",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96",
+    artist: "Ed Sheeran",
+  ),
+];
+List<Album> playlists = [
+  Album(
+    title: "Arjan Vailly",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273aeb151f6774b6edf52195631",
+    artist: "Manan Bhardwaj",
+  ),
+  Album(
+    title: "Satranga",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273021d7017f73387b008eab271",
+    artist: "Arijit Singh",
+  ),
+  Album(
+    title: "Khalasi",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273a6f83b62be5e3dea563f6d79",
+    artist: "Aditya Gadhvi",
+  ),
+  Album(
+    title: "Shape of You",
+    coverImage:
+        "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96",
+    artist: "Ed Sheeran",
+  ),
+];
 
 Album nowPlaying = Album(
   title: "Koi Si",
